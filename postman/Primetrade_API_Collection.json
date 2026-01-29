@@ -1,0 +1,234 @@
+{
+  "info": {
+    "_postman_id": "62c75a71-9dc5-48da-aaa1-af0c7845d1a3",
+    "name": "Prime Trade Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39386349"
+  },
+  "item": [
+    {
+      "name": "User Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Zainab Fatima\",\r\n  \"contact\": \"9050506353\",\r\n  \"email\": \"zainab.fatima@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4040/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"zainab.fatima@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4040/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Jwt Protected test api",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"zainab.fatima@example.com\",\r\n  \"password\": \"test123\"\r\n}\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:4040/api/test/hello",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "test",
+            "hello"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Access",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6YWluYWIuZmF0aW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY5NTQwNDA3LCJleHAiOjE3Njk2MjY4MDd9.N06OPkAD90cd7YKhZ511L0MTEHVrL_Zjpf_vmPpwhCc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4040/api/user/dashboard",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "user",
+            "dashboard"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User Trying Admin api",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Create Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6YWluYWIuZmF0aW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY5NTQwNDA3LCJleHAiOjE3Njk2MjY4MDd9.N06OPkAD90cd7YKhZ511L0MTEHVrL_Zjpf_vmPpwhCc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"JWT Task Test\",\r\n  \"description\": \"Primetrade Assignment\",\r\n  \"status\": \"PENDING\",\r\n  \"priority\": \"HIGH\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:4040/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "View My Task",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ6YWluYWIuZmF0aW1hQGV4YW1wbGUuY29tIiwiaWF0IjoxNzY5NTQwNDA3LCJleHAiOjE3Njk2MjY4MDd9.N06OPkAD90cd7YKhZ511L0MTEHVrL_Zjpf_vmPpwhCc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4040/api/tasks/my",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "tasks",
+            "my"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Admin View All",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:4040/api/tasks/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "4040",
+          "path": [
+            "api",
+            "tasks",
+            "all"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
