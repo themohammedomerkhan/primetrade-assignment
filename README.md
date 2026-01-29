@@ -28,6 +28,14 @@ Frontend:
 - Protected APIs
 - React Frontend UI
 
+## Database Setup
+
+Create MySQL database:
+
+CREATE DATABASE primetrade_db;
+
+Update credentials inside application.properties.
+
 ## Backend Run Steps
 
 1. Start MySQL
@@ -51,9 +59,27 @@ npm start
 Frontend URL:
 http://localhost:3000
 
+## API Authentication Flow
+
+1. Register User using /api/auth/register  
+2. Login User using /api/auth/login  
+3. JWT Token will be returned  
+4. Use token in header for protected APIs:
+
+Authorization: Bearer YOUR_TOKEN
+
+
 ## API Documentation
 
 Postman collection available in /postman folder.
+
+## Scalability Notes
+
+- Stateless JWT Authentication (horizontal scaling supported)
+- Layered Architecture (Controller-Service-Repository)
+- Can be containerized using Docker
+- Redis caching can be added for performance
+- Load balancer ready architecture
 
 ## Scalability Notes
 
@@ -63,4 +89,4 @@ Postman collection available in /postman folder.
 - Redis caching can be added
 
 ## Author
-Mohammed Omer Khan(KhanSahab)
+Mohammed Omer Khan
